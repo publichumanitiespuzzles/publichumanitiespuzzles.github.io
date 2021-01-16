@@ -1,0 +1,137 @@
+// OTHER THINGS...
+
+a {
+  text-decoration: none;
+  &, &:active, &:link {
+    color: @link;
+  }
+  &:hover, &:visited {
+    color: @linkHover;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.mfa-alert {
+  background-color: @gray1;
+  border: 1px solid @gray2;
+  border-radius: 4px;
+  display: block;
+  padding: 1.5em;
+}
+
+.mfa-footer {
+  font-size: 0.6em;
+  padding: 0 1em 1em 1em;
+  text-align: right;
+}
+
+// things to hide on load
+.mfa-cookies-only, .mfa-print-only, .mfa-solution-only {
+  display: none !important;
+}
+
+.mfa-contact-email:not(button) {
+  color: @link;
+
+  &:not([data-mail-name]):after {
+    content: '@mondayfills.com';
+  }
+  &:hover {
+    color: @linkHover;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.mfa-cols {
+  display: flex;
+  flex-direction: row;
+
+  & > div {
+    flex: 1;
+    margin-left: 2em;
+    margin-right: 2em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.mfa-float-left {
+  float: left;
+}
+
+
+// Bootstrap style spacing classes
+.loop(@cursor) when (@cursor >= 0) {
+  .loop((@cursor - 1));
+
+  .m-@{cursor} {
+    margin: (1rem * @cursor) !important;
+  }
+  .mt-@{cursor} {
+    margin-top: (1rem * @cursor) !important;
+  }
+  .mb-@{cursor} {
+    margin-bottom: (1rem * @cursor) !important;
+  }
+  .ml-@{cursor} {
+    margin-left: (1rem * @cursor) !important;
+  }
+  .mr-@{cursor} {
+    margin-right: (1rem * @cursor) !important;
+  }
+  .mx-@{cursor} {
+    margin-left: (1rem * @cursor) !important;
+    margin-right: (1rem * @cursor) !important;
+  }
+  .my-@{cursor} {
+    margin-bottom: (1rem * @cursor) !important;
+    margin-top: (1rem * @cursor) !important;
+  }
+  .p-@{cursor} {
+    padding: (1rem * @cursor) !important;
+  }
+  .pt-@{cursor} {
+    padding-top: (1rem * @cursor) !important;
+  }
+  .pb-@{cursor} {
+    padding-bottom: (1rem * @cursor) !important;
+  }
+  .pl-@{cursor} {
+    padding-left: (1rem * @cursor) !important;
+  }
+  .pr-@{cursor} {
+    padding-right: (1rem * @cursor) !important;
+  }
+  .px-@{cursor} {
+    padding-left: (1rem * @cursor) !important;
+    padding-right: (1rem * @cursor) !important;
+  }
+  .py-@{cursor} {
+    padding-bottom: (1rem * @cursor) !important;
+    padding-top: (1rem * @cursor) !important;
+  }
+  .b-@{cursor} {
+    border:  1px solid @gray2 !important;
+  }
+  .bt-@{cursor} {
+    border-top:  1px solid @gray2 !important;
+  }
+  .bb-@{cursor} {
+    border-bottom: 1px solid @gray2 !important;
+  }
+
+}
+.loop(8);
+
+.b-0, .bt-0, .bb-0 {
+  border: none !important;
+}

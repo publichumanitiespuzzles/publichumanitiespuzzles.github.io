@@ -1,0 +1,54 @@
+// MEDIA QUERIES
+@media (max-width: 1200px) {
+  .mfa-acrostic-outer-wrapper {
+    #mfa-main {
+      #mfa-clues > div:first-child {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .mfa-acrostic-outer-wrapper {
+    .mfa-cols {
+      display: block;
+      & > div {
+        margin: 0;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .mfa-acrostic-outer-wrapper {
+    #mfa-main {
+      #mfa-solver {
+        .mfa-solver-btn {
+          padding: 0 .5em;
+          width: auto;
+
+          .mfa-solver-arrow {
+            height: 3em;
+          }
+        }
+        #mfa-solver-next {
+          padding-right: 0;
+        }
+        #mfa-solver-prev {
+          padding-left: 0;
+        }
+      }
+      #mfa-clues > div:first-child {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+      }
+    }
+
+    #mfaModalTemplates .mfa-modal-inner > div.mfa-modal {
+      padding: 2.25em 1em 1em 1em;
+    }
+  }
+}

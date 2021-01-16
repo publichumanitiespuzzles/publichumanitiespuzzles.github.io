@@ -1,0 +1,200 @@
+#mfa-main {
+  position: relative;
+
+  #mfa-author {
+    background-color: @gray1;
+    border-bottom: 1px solid @gray3;
+    padding: 1em;
+
+    h5 {
+      font-size: .8em;
+      font-weight: normal;
+      margin: 0 0 .5em 0;
+      text-align: center;
+    }
+
+    .mfa-section-wrapper {
+      .mfa-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 1px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  #mfa-grid {
+    border-bottom: 1px solid @gray3;
+    padding: 1em;
+
+    .mfa-section-wrapper {
+
+      .mfa-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 1px;
+        margin: 0 auto;
+        padding-left: 1px;
+        padding-top: 1px;
+      }
+    }
+  }
+
+  #mfa-solver {
+    background-color: @gray1;
+    border-bottom: 1px solid @gray3;
+    display: flex;
+    padding: 1em;
+
+    .mfa-section {
+      flex: 1;
+      text-align: center;
+
+      .mfa-word {
+        display: none;
+        margin: 0;
+
+        .mfa-input {
+          margin: 0;
+          padding: 0.4em 0 0 0;
+        }
+
+        .mfa-clue {
+          font-size: .9em;
+          margin: 0 0 1em 0;
+          .mfa-ordinal {
+            margin: 0;
+          }
+        }
+      }
+
+      .mfa-word:first-child {
+        display: inline-block;
+      }
+
+    }
+
+    .mfa-solver-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 0;
+      padding: 0 2em;
+      outline: none;
+      opacity: .15;
+      width: 100px;
+
+      &:hover {
+        opacity: .4;
+      }
+
+      .mfa-solver-arrow {
+        height: 4em;
+      }
+    }
+  }
+
+  #mfa-clues {
+    padding: 1em;
+
+    .mfa-square {
+      height: 1.25em;
+      margin: 0 0.125em;
+      max-height: 1.25em;
+      max-width: 1.25em;
+      min-height: 1.25em;
+      min-width: 1.25em;
+      width: 1.25em;
+    }
+
+    .mfa-word {
+      display: block;
+      min-height: 4em;
+      margin-bottom: 0;
+      margin-left: 1.5em;
+      padding-bottom: 2em;
+      padding-right: .5em;
+      width: calc(100% - 2em);
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      -o-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
+      column-break-inside: avoid;
+      break-inside: avoid;
+
+      .mfa-clue {
+        font-size: .9em;
+        margin: 0 0 1em 0;
+      }
+    }
+
+    & > div:first-child {
+      -webkit-column-count: 3; /* Chrome, Safari, Opera */
+      -moz-column-count: 3; /* Firefox */
+      column-count: 3;
+      -webkit-column-gap: 1em;
+      -moz-column-gap: 1em;
+      column-gap: 1em;
+    }
+  }
+
+  // solver & clue tweaks
+  #mfa-solver, #mfa-clues {
+    .mfa-square {
+      border: none;
+      display: inline-block;
+      height: 1.75em;
+      line-height: 1em;
+      margin: 0 0.25em .75em 0.25em;
+      max-height: 1.75em;
+      max-width: 1.75em;
+      min-height: 1.5em;
+      min-width: 1.75em;
+      padding: 1px;
+      width: 1.75em;
+
+      & > .mfa-ordinal {
+        display: none;
+      }
+
+    }
+
+    .mfa-number {
+      border-top: 1px solid #000;
+      display: block;
+      font-size: 0.6em;
+      line-height: 1.3em;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    .mfa-input {
+      display: block;
+      font-weight: bold;
+      height: 1.25em;
+      line-height: 1em;
+      max-height: 1.25em;
+      min-height: 1.25em;
+      padding: 0.2em 0 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  #mfa-clues {
+    .mfa-input {
+      margin: .4em 0 0 0;
+      padding: 0;
+    }
+  }
+}

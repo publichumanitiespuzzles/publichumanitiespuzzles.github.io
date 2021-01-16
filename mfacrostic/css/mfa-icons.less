@@ -1,0 +1,115 @@
+// MFA ICONS
+
+@mfaImages: 'images/mmf_icons';
+
+.mfa-icon {
+  background-image: url('@{mfaImages}/icons_acrostic.png');
+  background-origin: border-box;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: .75em; max-height: .75em; min-height: .75em;
+  line-height: .75em;
+  overflow: hidden;
+  width: .75em; max-width: .75em; min-width: .75em;
+
+  &:before {
+    content: '\00a0';
+  }
+
+  &.mfa-icon-lg {
+    height: 1em; max-height: 1em; min-height: 1em;
+    width: 1em; max-width: 1em; min-width: 1em;
+  }
+  &.mfa-icon-xl {
+    height: 1.5em; max-height: 1.5em; min-height: 1.5em;
+    width: 1.5em; max-width: 1.5em; min-width: 1.5em;
+  }
+  &.mfa-icon-2x {
+    height: 2em; max-height: 2em; min-height: 2em;
+    width: 2em; max-width: 2em; min-width: 2em;
+  }
+  &.mfa-icon-3x {
+    height: 3em; max-height: 3em; min-height: 3em;
+    width: 3em; max-width: 3em; min-width: 3em;
+  }
+  &.mfa-icon-4x {
+    height: 4em; max-height: 4em; min-height: 4em;
+    width: 4em; max-width: 4em; min-width: 4em;
+  }
+  &.mfa-icon-5x {
+    height: 5em; max-height: 5em; min-height: 5em;
+    width: 5em; max-width: 5em; min-width: 5em;
+  }
+
+  &.mfa-icon-arrows {
+    background-image: url('@{mfaImages}/arrows.svg');
+  }
+  &.mfa-icon-backspace {
+    background-image: url('@{mfaImages}/backspace.svg');
+  }
+  &.mfa-icon-cog {
+    background-image: url('@{mfaImages}/cog.svg');
+  }
+  &.mfa-icon-colors {
+    background-image: url('@{mfaImages}/colors.svg');
+  }
+  &.mfa-icon-exclamation-triangle {
+    background-image: url('@{mfaImages}/exclamation-triangle.svg');
+  }
+  &.mfa-icon-external-link {
+    background-image: url('@{mfaImages}/external-link.svg');
+  }
+  &.mfa-icon-eye {
+    background-image: url('@{mfaImages}/eye.svg');
+  }
+  &.mfa-icon-keyboard {
+    background-image: url('@{mfaImages}/keyboard.svg');
+  }
+  &.mfa-icon-menu {
+    background-image: url('@{mfaImages}/menu.svg');
+  }
+  &.mfa-icon-more {
+    background-image: url('@{mfaImages}/more.svg');
+  }
+  &.mfa-icon-mouse-pointer {
+    background-image: url('@{mfaImages}/mouse-pointer.svg');
+  }
+  &.mfa-icon-print {
+    background-image: url('@{mfaImages}/print.svg');
+  }
+  &.mfa-icon-question {
+    background-image: url('@{mfaImages}/question.svg');
+  }
+  &.mfa-icon-save {
+    background-image: url('@{mfaImages}/save.svg');
+  }
+  &.mfa-icon-search {
+    background-image: url('@{mfaImages}/search.svg');
+  }
+  &.mfa-icon-tab {
+    background-image: url('@{mfaImages}/tab.svg');
+  }
+  &.mfa-icon-trash {
+    background-image: url('@{mfaImages}/trash.svg');
+  }
+
+}
+
+.mfa-icon-ul {
+  list-style: none;
+  padding-left: 2em;
+  li {
+    .mfa-icon {
+      margin-left: -1.5em;
+      margin-right: .5em;
+    }
+  }
+}
+
+.mfa-icon-inline, .mfa-icon-inline .mfa-icon {
+  alignment-baseline: center;
+  line-height: inherit;
+}
+

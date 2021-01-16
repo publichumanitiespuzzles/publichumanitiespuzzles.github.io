@@ -1,0 +1,1723 @@
+.mfa-acrostic-outer-wrapper {
+  box-sizing: content-box;
+  cursor: default;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper {
+  background-color: white;
+  opacity: 0;
+  transition: opacity 1s linear;
+  position: relative;
+}
+.mfa-acrostic-outer-wrapper #mfa-magic-field {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: transparent;
+  cursor: default;
+  display: block;
+  font-size: 16px;
+  height: 10px;
+  line-height: 1px;
+  margin: 0;
+  opacity: 0;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 10px;
+  z-index: -10000;
+  transform: scale(0);
+}
+.mfa-acrostic-outer-wrapper .mfa-btn,
+.mfa-acrostic-outer-wrapper .mfa-btn:active,
+.mfa-acrostic-outer-wrapper .mfa-btn:link,
+.mfa-acrostic-outer-wrapper .mfa-btn:hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:visited {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: content-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.75em;
+  line-height: 1em;
+  margin: 0;
+  outline: none;
+  padding: 0.5em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+  -webkit-appearance: none;
+}
+.mfa-acrostic-outer-wrapper .mfa-btn:not(.mfa-dropdown):hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:active:not(.mfa-dropdown):hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:link:not(.mfa-dropdown):hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:hover:not(.mfa-dropdown):hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:visited:not(.mfa-dropdown):hover {
+  background-color: #666666;
+  color: white;
+}
+.mfa-acrostic-outer-wrapper .mfa-btn:not(.mfa-dropdown):hover .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:active:not(.mfa-dropdown):hover .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:link:not(.mfa-dropdown):hover .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:hover:not(.mfa-dropdown):hover .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:visited:not(.mfa-dropdown):hover .mfa-icon {
+  background-position: right center;
+}
+.mfa-acrostic-outer-wrapper .mfa-btn.mfa-btn-lg,
+.mfa-acrostic-outer-wrapper .mfa-btn:active.mfa-btn-lg,
+.mfa-acrostic-outer-wrapper .mfa-btn:link.mfa-btn-lg,
+.mfa-acrostic-outer-wrapper .mfa-btn:hover.mfa-btn-lg,
+.mfa-acrostic-outer-wrapper .mfa-btn:visited.mfa-btn-lg {
+  font-size: 1em;
+}
+.mfa-acrostic-outer-wrapper .mfa-btn.mfa-btn-dk,
+.mfa-acrostic-outer-wrapper .mfa-btn:active.mfa-btn-dk,
+.mfa-acrostic-outer-wrapper .mfa-btn:link.mfa-btn-dk,
+.mfa-acrostic-outer-wrapper .mfa-btn:hover.mfa-btn-dk,
+.mfa-acrostic-outer-wrapper .mfa-btn:visited.mfa-btn-dk {
+  background-color: #666666;
+  color: white;
+}
+.mfa-acrostic-outer-wrapper .mfa-btn.mfa-btn-dk:hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:active.mfa-btn-dk:hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:link.mfa-btn-dk:hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:hover.mfa-btn-dk:hover,
+.mfa-acrostic-outer-wrapper .mfa-btn:visited.mfa-btn-dk:hover {
+  background-color: #999999;
+}
+.mfa-acrostic-outer-wrapper .mfa-btn.mfa-btn-dk .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:active.mfa-btn-dk .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:link.mfa-btn-dk .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:hover.mfa-btn-dk .mfa-icon,
+.mfa-acrostic-outer-wrapper .mfa-btn:visited.mfa-btn-dk .mfa-icon {
+  background-position: right center;
+}
+.mfa-acrostic-outer-wrapper .mfa-column {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+.mfa-acrostic-outer-wrapper .mfa-word {
+  display: block;
+  margin: 0 auto 2em auto;
+  white-space: normal;
+}
+.mfa-acrostic-outer-wrapper .mfa-square,
+.mfa-acrostic-outer-wrapper .mfa-black,
+.mfa-acrostic-outer-wrapper .mfa-demo-square {
+  background-color: #fff;
+  border: 1px solid #666666;
+  cursor: pointer;
+  display: inline-block;
+  height: 2em;
+  line-height: 0;
+  margin: -1px 0 0 -1px;
+  max-height: 2em;
+  max-width: 2em;
+  min-height: 2em;
+  min-width: 2em;
+  padding: 0 !important;
+  position: relative;
+  text-align: center;
+  width: 2em;
+}
+.mfa-acrostic-outer-wrapper .mfa-square > .mfa-input,
+.mfa-acrostic-outer-wrapper .mfa-demo-input {
+  border: none;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0 0 0.2em 0;
+  max-height: 1em;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 2em;
+}
+.mfa-acrostic-outer-wrapper .mfa-square > .mfa-number,
+.mfa-acrostic-outer-wrapper .mfa-demo-number {
+  display: block;
+  font-size: 0.55em;
+  line-height: 1em;
+  margin: 2px 0 0 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mfa-acrostic-outer-wrapper .mfa-square > .mfa-ordinal,
+.mfa-acrostic-outer-wrapper .mfa-demo-ordinal {
+  display: block;
+  font-size: 0.55em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 2px 2px 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.mfa-acrostic-outer-wrapper .mfa-black {
+  background-color: #000000;
+  font-weight: bold;
+  color: #fff;
+}
+.mfa-acrostic-outer-wrapper .mfa-clue {
+  line-height: 1.4em;
+  white-space: normal;
+}
+.mfa-acrostic-outer-wrapper .mfa-clue > .mfa-ordinal {
+  display: inline-block;
+  margin-left: -1.5em;
+  position: relative;
+  text-align: left;
+  width: 1.625em;
+}
+.mfa-acrostic-outer-wrapper .mfa-clue > .mfa-ordinal:after {
+  content: ".";
+}
+.mfa-acrostic-outer-wrapper .mfa-grid-padding-hide {
+  cursor: default;
+  opacity: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-header {
+  position: relative;
+  width: 100%;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner {
+  align-items: stretch;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  flex-direction: column;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner .mfa-cover {
+  border-bottom: 1px solid #cccccc;
+  flex: 1;
+  padding: 1em;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner .mfa-cover .mfa-acrostic-title {
+  font-size: 1.6em;
+  font-weight: bold;
+  padding-right: 0.25em;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner .mfa-cover .mfa-acrostic-byline {
+  display: inline;
+  font-size: calc(1.6em * 0.5);
+  white-space: nowrap;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  justify-items: stretch;
+  white-space: nowrap;
+  width: 100%;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group {
+  border-left: 1px solid #cccccc;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group:first-child {
+  border-left: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:active,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:link,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:hover,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:visited {
+  align-items: flex-start;
+  border: none;
+  border-right: 1px solid #cccccc;
+  border-radius: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:last-child,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:active:last-child,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:link:last-child,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:hover:last-child,
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn-group .mfa-btn:visited:last-child {
+  border-right: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-dropdown-menu {
+  background-color: white;
+  border: 1px solid #cccccc;
+  box-shadow: rgba(0, 0, 0, 0.176) 0 6px 12px 0;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  white-space: nowrap;
+  z-index: 1;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-dropdown-menu.mfa-dropdown-menu-left {
+  left: 0;
+  right: unset;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-dropdown-menu a {
+  border-bottom: 1px solid #cccccc;
+  color: #666666;
+  display: block;
+  padding: 1.2em 1em;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-dropdown-menu a:hover {
+  background-color: #e8e8e8;
+  color: black;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-dropdown-menu a:hover .mfa-icon {
+  opacity: 1;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-dropdown-menu a .mfa-icon {
+  background-position: center left;
+  margin-right: 0.25em;
+  opacity: 0.4;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn.mfa-dropdown.mfa-open {
+  background-color: #666666;
+  color: white;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn.mfa-dropdown.mfa-open .mfa-dropdown-toggle .mfa-icon {
+  background-position: right center;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner #mfa-toolbar .mfa-btn.mfa-dropdown.mfa-open .mfa-dropdown-menu {
+  display: block;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner .mfa-dropdown-toggle {
+  padding-right: 1em;
+  position: relative;
+}
+.mfa-acrostic-outer-wrapper #mfa-header .mfa-puzzle-header-inner .mfa-dropdown-toggle:after {
+  color: #999999;
+  content: '\02228';
+  display: inline-block;
+  font-size: 0.65em;
+  font-weight: bold;
+  line-height: 1em;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 0.5em);
+  transform: scale(1.75, 1);
+}
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper #mfa-nav-check-auto {
+  text-align: center !important;
+}
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper #mfa-nav-check-auto span {
+  color: #666666;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper #mfa-nav-check-auto span:after {
+  content: ' On';
+}
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper.mfa-auto-check #mfa-nav-check-auto span:after {
+  content: ' Off';
+}
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper.mfa-auto-check #mfa-nav-check-btn .mfa-dropdown-item:not(#mfa-nav-check-auto) {
+  display: none !important;
+}
+.mfa-acrostic-outer-wrapper #mfa-main {
+  position: relative;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-author {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #cccccc;
+  padding: 1em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-author h5 {
+  font-size: 0.8em;
+  font-weight: normal;
+  margin: 0 0 0.5em 0;
+  text-align: center;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-author .mfa-section-wrapper .mfa-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1px;
+  margin: 0 auto;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-grid {
+  border-bottom: 1px solid #cccccc;
+  padding: 1em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-grid .mfa-section-wrapper .mfa-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1px;
+  margin: 0 auto;
+  padding-left: 1px;
+  padding-top: 1px;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  padding: 1em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-section {
+  flex: 1;
+  text-align: center;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-section .mfa-word {
+  display: none;
+  margin: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-section .mfa-word .mfa-input {
+  margin: 0;
+  padding: 0.4em 0 0 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-section .mfa-word .mfa-clue {
+  font-size: 0.9em;
+  margin: 0 0 1em 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-section .mfa-word .mfa-clue .mfa-ordinal {
+  margin: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-section .mfa-word:first-child {
+  display: inline-block;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-solver-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0 2em;
+  outline: none;
+  opacity: 0.15;
+  width: 100px;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-solver-btn:hover {
+  opacity: 0.4;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-solver-btn .mfa-solver-arrow {
+  height: 4em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues {
+  padding: 1em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-square {
+  height: 1.25em;
+  margin: 0 0.125em;
+  max-height: 1.25em;
+  max-width: 1.25em;
+  min-height: 1.25em;
+  min-width: 1.25em;
+  width: 1.25em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-word {
+  display: block;
+  min-height: 4em;
+  margin-bottom: 0;
+  margin-left: 1.5em;
+  padding-bottom: 2em;
+  padding-right: 0.5em;
+  width: calc(100% - 2em);
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -o-column-break-inside: avoid;
+  -ms-column-break-inside: avoid;
+  column-break-inside: avoid;
+  break-inside: avoid;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-word .mfa-clue {
+  font-size: 0.9em;
+  margin: 0 0 1em 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues > div:first-child {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
+  column-count: 3;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-square,
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-square {
+  border: none;
+  display: inline-block;
+  height: 1.75em;
+  line-height: 1em;
+  margin: 0 0.25em 0.75em 0.25em;
+  max-height: 1.75em;
+  max-width: 1.75em;
+  min-height: 1.5em;
+  min-width: 1.75em;
+  padding: 1px;
+  width: 1.75em;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-square > .mfa-ordinal,
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-square > .mfa-ordinal {
+  display: none;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-number,
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-number {
+  border-top: 1px solid #000;
+  display: block;
+  font-size: 0.6em;
+  line-height: 1.3em;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-input,
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-input {
+  display: block;
+  font-weight: bold;
+  height: 1.25em;
+  line-height: 1em;
+  max-height: 1.25em;
+  min-height: 1.25em;
+  padding: 0.2em 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+.mfa-acrostic-outer-wrapper #mfa-main #mfa-clues .mfa-input {
+  margin: 0.4em 0 0 0;
+  padding: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-loading-error {
+  display: none;
+  margin-top: 5em;
+  text-align: center;
+  width: 100%;
+}
+.mfa-acrostic-outer-wrapper #mfa-loading-error img {
+  height: auto;
+  width: 3em;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner {
+  margin-top: 5em;
+  text-align: center;
+  width: 100%;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div {
+  transform-origin: 40px 40px;
+  animation: mfa-spinner 1.2s linear infinite;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #333333;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.mfa-acrostic-outer-wrapper > #mfa-loading-spinner .mfa-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes mfa-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates {
+  background-color: rgba(255, 255, 255, 0.75);
+  box-sizing: border-box;
+  display: none;
+  height: 0;
+  padding: 0;
+  position: relative;
+  width: 0;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner {
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal {
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.176) 0 6px 12px 0;
+  display: none;
+  margin: 2em auto 0 auto;
+  max-height: calc(100vh - 4em);
+  padding: 2.5em 2em 2em 2em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4em;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal.mfa-modal-md {
+  max-width: 768px;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal.mfa-modal-sm {
+  max-width: 500px;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal h3 {
+  margin-top: 0;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal .mfa-modal-body {
+  max-height: calc(100vh - 16em);
+  overflow-y: scroll;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal .mfa-modal-footer {
+  margin-top: 2em;
+  text-align: right;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal .mfa-modal-close.mfa-times {
+  background: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 0.2;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  text-decoration: none;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal .mfa-modal-close.mfa-times:hover,
+.mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal .mfa-modal-close.mfa-times:focus {
+  cursor: pointer;
+  opacity: 0.5;
+  text-decoration: none;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates.mfa-show {
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+}
+.mfa-acrostic-outer-wrapper #mfaModalTemplates.mfa-show > .mfa-modal-inner > div.mfa-show {
+  display: block;
+}
+.mfa-acrostic-outer-wrapper #mfa-helpModal p,
+.mfa-acrostic-outer-wrapper #mfa-helpModal ul,
+.mfa-acrostic-outer-wrapper #mfa-helpModal .mfa-alert {
+  font-size: 0.9rem;
+}
+.mfa-acrostic-outer-wrapper #mfa-helpModal p {
+  line-height: 1.4em;
+}
+.mfa-acrostic-outer-wrapper #mfa-helpModal .mfa-icon-ul li {
+  margin-bottom: 0.25em;
+}
+.mfa-acrostic-outer-wrapper #mfa-helpModal .mfa-icon-drop-cap {
+  display: block;
+  float: left;
+  height: 5em;
+  max-height: 5em;
+  margin: 0 1em 0.25em 0;
+  width: 5em;
+  max-width: 5em;
+}
+.mfa-acrostic-outer-wrapper #mfa-finishedModal h3 {
+  color: #666666;
+  margin-bottom: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-finishedModal .mfa-friendly-container {
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  font-style: italic;
+  margin: 1.5em 0;
+  padding: 1.5em;
+}
+.mfa-acrostic-outer-wrapper #mfa-finishedModal .mfa-friendly-container .mfa-friendly-quote {
+  font-weight: bolder;
+}
+.mfa-acrostic-outer-wrapper #mfa-finishedModal .mfa-friendly-container .mfa-friendly-quote:before {
+  content: "\0201C";
+}
+.mfa-acrostic-outer-wrapper #mfa-finishedModal .mfa-friendly-container .mfa-friendly-quote:after {
+  content: "\0201D";
+}
+.mfa-acrostic-outer-wrapper #mfa-finishedModal .mfa-friendly-container .mfa-friendly-author {
+  color: #666666;
+  font-size: 0.85em;
+  margin-top: 0.5em;
+}
+.mfa-acrostic-outer-wrapper #mfa-finishedModal .mfa-friendly-container .mfa-friendly-author:before {
+  content: "\2014\00A0";
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal small {
+  font-size: 0.75em;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal #mfa-demo-template,
+.mfa-acrostic-outer-wrapper #mfa-settingsModal #mfa-color-options-template {
+  display: none;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal #mfa-color-demo {
+  padding-bottom: 0.5em;
+  text-align: center;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-demo-section {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1px;
+  max-width: calc(24em + 12px);
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-demo-section .mfa-demo-square,
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-demo-section .mfa-black {
+  cursor: default;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal #mfa-color-options {
+  text-align: center;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-color-saved {
+  border-color: #666666;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-color-saved .mfa-color-name:after {
+  content: ' *';
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-chip-btn {
+  background-color: white;
+  border: 1px solid #e8e8e8;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0.25em;
+  outline: none;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-chip-btn:hover {
+  border-color: #666666;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-chip-btn p {
+  margin: 0;
+  padding: 0;
+}
+.mfa-acrostic-outer-wrapper #mfa-settingsModal .mfa-color-chip {
+  border: 1px solid #cccccc;
+  display: inline-block;
+  height: 2em;
+  margin: 2px !important;
+  padding: 0;
+  vertical-align: middle;
+  width: 2em;
+}
+.mfa-acrostic-outer-wrapper .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-demo-active {
+  background-color: #ffff93;
+}
+.mfa-acrostic-outer-wrapper .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-demo-active-word {
+  background-color: #fafad2;
+}
+.mfa-acrostic-outer-wrapper .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-demo-focused {
+  background-color: #ffff00;
+}
+.mfa-acrostic-outer-wrapper .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-demo-hover {
+  background-color: #afeeee;
+}
+.mfa-acrostic-outer-wrapper .mfa-cheater .mfa-input,
+.mfa-acrostic-outer-wrapper .mfa-demo-cheater .mfa-demo-input {
+  color: #888888;
+}
+.mfa-acrostic-outer-wrapper .mfa-error .mfa-input,
+.mfa-acrostic-outer-wrapper .mfa-demo-error .mfa-demo-input {
+  color: #cc0000;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-demo-active {
+  background-color: #dddddd;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-demo-active-word {
+  background-color: #eeeeee;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-demo-focused {
+  background-color: #cccccc;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-gray .mfa-demo-hover {
+  background-color: #bbbbbb;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-demo-active {
+  background-color: #e0f3db;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-demo-active-word {
+  background-color: #f7fcf0;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-demo-focused {
+  background-color: #ccebc5;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-green .mfa-demo-hover {
+  background-color: #a8ddb5;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-demo-active {
+  background-color: #e0ecf4;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-demo-active-word {
+  background-color: #f7fcfd;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-demo-focused {
+  background-color: #bfd3e6;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-blue .mfa-demo-hover {
+  background-color: #9ebcda;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-demo-active {
+  background-color: #e7e1ef;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-demo-active-word {
+  background-color: #f7f4f9;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-demo-focused {
+  background-color: #d4b9da;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-purple .mfa-demo-hover {
+  background-color: #c994c7;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-demo-active {
+  background-color: #fee0d2;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-demo-active-word {
+  background-color: #fff5f0;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-demo-focused {
+  background-color: #fcbba1;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-red .mfa-demo-hover {
+  background-color: #fc9272;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-demo-active {
+  background-color: #fee6ce;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-demo-active-word {
+  background-color: #fff5eb;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-demo-focused {
+  background-color: #fdd0a2;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-orange .mfa-demo-hover {
+  background-color: #fdae6b;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-demo-active {
+  background-color: #c6daff;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-demo-active-word {
+  background-color: #ecd2f3;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-demo-focused {
+  background-color: #c6fef5;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-pastels .mfa-demo-hover {
+  background-color: #fbfec7;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-demo-active {
+  background-color: #00ff00;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-demo-active-word {
+  background-color: #00ffff;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-demo-focused {
+  background-color: #ff93f0;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-bright .mfa-demo-hover {
+  background-color: #ffff00;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-active,
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-demo-active {
+  background-color: #006ddb;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-active-word,
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-demo-active-word {
+  background-color: #ffb677;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-focused,
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-demo-focused {
+  background-color: #ff6db6;
+}
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-hover,
+.mfa-acrostic-outer-wrapper .mfa-colors-contrast .mfa-demo-hover {
+  background-color: #24ff1a;
+}
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper.mfa-auto-check .mfa-incorrect .mfa-input,
+.mfa-acrostic-outer-wrapper .mfa-puzzle-wrapper.mfa-auto-check .mfa-demo-incorrect .mfa-demo-input {
+  color: #cc0000;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon {
+  background-image: url('images/mmf_icons/icons_acrostic.png');
+  background-origin: border-box;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 0.75em;
+  max-height: 0.75em;
+  min-height: 0.75em;
+  line-height: 0.75em;
+  overflow: hidden;
+  width: 0.75em;
+  max-width: 0.75em;
+  min-width: 0.75em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon:before {
+  content: '\00a0';
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-lg {
+  height: 1em;
+  max-height: 1em;
+  min-height: 1em;
+  width: 1em;
+  max-width: 1em;
+  min-width: 1em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-xl {
+  height: 1.5em;
+  max-height: 1.5em;
+  min-height: 1.5em;
+  width: 1.5em;
+  max-width: 1.5em;
+  min-width: 1.5em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-2x {
+  height: 2em;
+  max-height: 2em;
+  min-height: 2em;
+  width: 2em;
+  max-width: 2em;
+  min-width: 2em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-3x {
+  height: 3em;
+  max-height: 3em;
+  min-height: 3em;
+  width: 3em;
+  max-width: 3em;
+  min-width: 3em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-4x {
+  height: 4em;
+  max-height: 4em;
+  min-height: 4em;
+  width: 4em;
+  max-width: 4em;
+  min-width: 4em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-5x {
+  height: 5em;
+  max-height: 5em;
+  min-height: 5em;
+  width: 5em;
+  max-width: 5em;
+  min-width: 5em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-arrows {
+  background-image: url('images/mmf_icons/arrows.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-backspace {
+  background-image: url('images/mmf_icons/backspace.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-cog {
+  background-image: url('images/mmf_icons/cog.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-colors {
+  background-image: url('images/mmf_icons/colors.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-exclamation-triangle {
+  background-image: url('images/mmf_icons/exclamation-triangle.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-external-link {
+  background-image: url('images/mmf_icons/external-link.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-eye {
+  background-image: url('images/mmf_icons/eye.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-keyboard {
+  background-image: url('images/mmf_icons/keyboard.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-menu {
+  background-image: url('images/mmf_icons/menu.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-more {
+  background-image: url('images/mmf_icons/more.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-mouse-pointer {
+  background-image: url('images/mmf_icons/mouse-pointer.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-print {
+  background-image: url('images/mmf_icons/print.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-question {
+  background-image: url('images/mmf_icons/question.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-save {
+  background-image: url('images/mmf_icons/save.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-search {
+  background-image: url('images/mmf_icons/search.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-tab {
+  background-image: url('images/mmf_icons/tab.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon.mfa-icon-trash {
+  background-image: url('images/mmf_icons/trash.svg');
+}
+.mfa-acrostic-outer-wrapper .mfa-icon-ul {
+  list-style: none;
+  padding-left: 2em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon-ul li .mfa-icon {
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+}
+.mfa-acrostic-outer-wrapper .mfa-icon-inline,
+.mfa-acrostic-outer-wrapper .mfa-icon-inline .mfa-icon {
+  alignment-baseline: center;
+  line-height: inherit;
+}
+.mfa-acrostic-outer-wrapper a {
+  text-decoration: none;
+}
+.mfa-acrostic-outer-wrapper a,
+.mfa-acrostic-outer-wrapper a:active,
+.mfa-acrostic-outer-wrapper a:link {
+  color: #337ab7;
+}
+.mfa-acrostic-outer-wrapper a:hover,
+.mfa-acrostic-outer-wrapper a:visited {
+  color: #23527c;
+}
+.mfa-acrostic-outer-wrapper a:hover {
+  text-decoration: underline;
+}
+.mfa-acrostic-outer-wrapper .mfa-alert {
+  background-color: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  display: block;
+  padding: 1.5em;
+}
+.mfa-acrostic-outer-wrapper .mfa-footer {
+  font-size: 0.6em;
+  padding: 0 1em 1em 1em;
+  text-align: right;
+}
+.mfa-acrostic-outer-wrapper .mfa-cookies-only,
+.mfa-acrostic-outer-wrapper .mfa-print-only,
+.mfa-acrostic-outer-wrapper .mfa-solution-only {
+  display: none !important;
+}
+.mfa-acrostic-outer-wrapper .mfa-contact-email:not(button) {
+  color: #337ab7;
+}
+.mfa-acrostic-outer-wrapper .mfa-contact-email:not(button):not([data-mail-name]):after {
+  content: '@mondayfills.com';
+}
+.mfa-acrostic-outer-wrapper .mfa-contact-email:not(button):hover {
+  color: #23527c;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.mfa-acrostic-outer-wrapper .mfa-cols {
+  display: flex;
+  flex-direction: row;
+}
+.mfa-acrostic-outer-wrapper .mfa-cols > div {
+  flex: 1;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+.mfa-acrostic-outer-wrapper .mfa-cols > div:first-child {
+  margin-left: 0;
+}
+.mfa-acrostic-outer-wrapper .mfa-cols > div:last-child {
+  margin-right: 0;
+}
+.mfa-acrostic-outer-wrapper .mfa-float-left {
+  float: left;
+}
+.mfa-acrostic-outer-wrapper .m-0 {
+  margin: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-0 {
+  margin-top: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-0 {
+  margin-bottom: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-0 {
+  margin-left: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-0 {
+  margin-right: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-0 {
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-0 {
+  margin-bottom: 0rem !important;
+  margin-top: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-0 {
+  padding: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-0 {
+  padding-top: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-0 {
+  padding-bottom: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-0 {
+  padding-left: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-0 {
+  padding-right: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-0 {
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-0 {
+  padding-bottom: 0rem !important;
+  padding-top: 0rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-0 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-0 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-0 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-1 {
+  margin: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-1 {
+  margin-top: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-1 {
+  margin-bottom: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-1 {
+  margin-left: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-1 {
+  margin-right: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-1 {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-1 {
+  margin-bottom: 1rem !important;
+  margin-top: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-1 {
+  padding: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-1 {
+  padding-top: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-1 {
+  padding-bottom: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-1 {
+  padding-left: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-1 {
+  padding-right: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-1 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-1 {
+  padding-bottom: 1rem !important;
+  padding-top: 1rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-1 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-1 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-1 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-2 {
+  margin: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-2 {
+  margin-top: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-2 {
+  margin-bottom: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-2 {
+  margin-left: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-2 {
+  margin-right: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-2 {
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-2 {
+  margin-bottom: 2rem !important;
+  margin-top: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-2 {
+  padding: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-2 {
+  padding-top: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-2 {
+  padding-bottom: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-2 {
+  padding-left: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-2 {
+  padding-right: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-2 {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-2 {
+  padding-bottom: 2rem !important;
+  padding-top: 2rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-2 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-2 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-2 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-3 {
+  margin: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-3 {
+  margin-top: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-3 {
+  margin-bottom: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-3 {
+  margin-left: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-3 {
+  margin-right: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-3 {
+  margin-left: 3rem !important;
+  margin-right: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-3 {
+  margin-bottom: 3rem !important;
+  margin-top: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-3 {
+  padding: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-3 {
+  padding-top: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-3 {
+  padding-bottom: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-3 {
+  padding-left: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-3 {
+  padding-right: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-3 {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-3 {
+  padding-bottom: 3rem !important;
+  padding-top: 3rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-3 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-3 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-3 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-4 {
+  margin: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-4 {
+  margin-top: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-4 {
+  margin-bottom: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-4 {
+  margin-left: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-4 {
+  margin-right: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-4 {
+  margin-left: 4rem !important;
+  margin-right: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-4 {
+  margin-bottom: 4rem !important;
+  margin-top: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-4 {
+  padding: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-4 {
+  padding-top: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-4 {
+  padding-bottom: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-4 {
+  padding-left: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-4 {
+  padding-right: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-4 {
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-4 {
+  padding-bottom: 4rem !important;
+  padding-top: 4rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-4 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-4 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-4 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-5 {
+  margin: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-5 {
+  margin-top: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-5 {
+  margin-bottom: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-5 {
+  margin-left: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-5 {
+  margin-right: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-5 {
+  margin-left: 5rem !important;
+  margin-right: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-5 {
+  margin-bottom: 5rem !important;
+  margin-top: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-5 {
+  padding: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-5 {
+  padding-top: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-5 {
+  padding-bottom: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-5 {
+  padding-left: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-5 {
+  padding-right: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-5 {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-5 {
+  padding-bottom: 5rem !important;
+  padding-top: 5rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-5 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-5 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-5 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-6 {
+  margin: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-6 {
+  margin-top: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-6 {
+  margin-bottom: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-6 {
+  margin-left: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-6 {
+  margin-right: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-6 {
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-6 {
+  margin-bottom: 6rem !important;
+  margin-top: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-6 {
+  padding: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-6 {
+  padding-top: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-6 {
+  padding-bottom: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-6 {
+  padding-left: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-6 {
+  padding-right: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-6 {
+  padding-left: 6rem !important;
+  padding-right: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-6 {
+  padding-bottom: 6rem !important;
+  padding-top: 6rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-6 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-6 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-6 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-7 {
+  margin: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-7 {
+  margin-top: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-7 {
+  margin-bottom: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-7 {
+  margin-left: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-7 {
+  margin-right: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-7 {
+  margin-left: 7rem !important;
+  margin-right: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-7 {
+  margin-bottom: 7rem !important;
+  margin-top: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-7 {
+  padding: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-7 {
+  padding-top: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-7 {
+  padding-bottom: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-7 {
+  padding-left: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-7 {
+  padding-right: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-7 {
+  padding-left: 7rem !important;
+  padding-right: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-7 {
+  padding-bottom: 7rem !important;
+  padding-top: 7rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-7 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-7 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-7 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .m-8 {
+  margin: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .mt-8 {
+  margin-top: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .mb-8 {
+  margin-bottom: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .ml-8 {
+  margin-left: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .mr-8 {
+  margin-right: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .mx-8 {
+  margin-left: 8rem !important;
+  margin-right: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .my-8 {
+  margin-bottom: 8rem !important;
+  margin-top: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .p-8 {
+  padding: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .pt-8 {
+  padding-top: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .pb-8 {
+  padding-bottom: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .pl-8 {
+  padding-left: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .pr-8 {
+  padding-right: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .px-8 {
+  padding-left: 8rem !important;
+  padding-right: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .py-8 {
+  padding-bottom: 8rem !important;
+  padding-top: 8rem !important;
+}
+.mfa-acrostic-outer-wrapper .b-8 {
+  border: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bt-8 {
+  border-top: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .bb-8 {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+.mfa-acrostic-outer-wrapper .b-0,
+.mfa-acrostic-outer-wrapper .bt-0,
+.mfa-acrostic-outer-wrapper .bb-0 {
+  border: none !important;
+}
+.mfa-acrostic-outer-wrapper.mfa-browser-support {
+  display: block;
+  text-align: center;
+}
+.mfa-acrostic-outer-wrapper.mfa-browser-support > div {
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 2em 2em 0.25em 2em;
+  width: 240px;
+  min-width: 240px;
+}
+.mfa-acrostic-outer-wrapper.mfa-browser-support > div .mfa-small-text {
+  display: block;
+  font-size: 0.85em;
+}
+.mfa-acrostic-outer-wrapper.mfa-browser-support > div .mfa-support-footer {
+  color: #999999;
+  display: block;
+  font-size: 0.65em;
+  margin-top: 4em;
+  margin-right: -2.5em;
+  text-align: right;
+}
+.mfa-acrostic-outer-wrapper.mfa-browser-support > div .mfa-support-footer:hover {
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  .mfa-acrostic-outer-wrapper #mfa-main #mfa-clues > div:first-child {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 1000px) {
+  .mfa-acrostic-outer-wrapper .mfa-cols {
+    display: block;
+  }
+  .mfa-acrostic-outer-wrapper .mfa-cols > div {
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-solver-btn {
+    padding: 0 0.5em;
+    width: auto;
+  }
+  .mfa-acrostic-outer-wrapper #mfa-main #mfa-solver .mfa-solver-btn .mfa-solver-arrow {
+    height: 3em;
+  }
+  .mfa-acrostic-outer-wrapper #mfa-main #mfa-solver #mfa-solver-next {
+    padding-right: 0;
+  }
+  .mfa-acrostic-outer-wrapper #mfa-main #mfa-solver #mfa-solver-prev {
+    padding-left: 0;
+  }
+  .mfa-acrostic-outer-wrapper #mfa-main #mfa-clues > div:first-child {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  .mfa-acrostic-outer-wrapper #mfaModalTemplates .mfa-modal-inner > div.mfa-modal {
+    padding: 2.25em 1em 1em 1em;
+  }
+}
+/*# sourceMappingURL=mfacrostic.css.map */

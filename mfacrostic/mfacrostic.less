@@ -1,0 +1,73 @@
+// mfAcrostic 1.0.1 © 2017-2021 David Murchie & Monday Fills. All rights reserved.
+
+@gray1: #f8f8f8;
+@gray2: #e8e8e8;
+@gray3: #cccccc;
+@gray4: #999999;
+@gray5: #666666;
+
+@link: #337ab7;
+@linkHover: #23527c;
+
+.mfa-acrostic-outer-wrapper {
+
+  box-sizing: content-box;
+  cursor: default;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  @import 'css/mfa-gameboard';
+  @import 'css/mfa-header';
+  @import 'css/mfa-sections';
+  @import 'css/mfa-loading';
+  @import 'css/mfa-modals';
+  @import 'css/mfa-color-schemes';
+  @import "css/mfa-icons";
+  @import "css/mfa-utils";
+
+  // print-only div
+  &.mfa-browser-support {
+    display: block;
+    text-align: center;
+
+    & > div {
+      border: 1px solid @gray3;
+      border-radius: 2px;
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 2em 2em .25em 2em;
+      width: 240px; min-width: 240px;
+
+      .mfa-small-text {
+        display: block;
+        font-size: .85em;
+      }
+      .mfa-support-footer {
+        color: #999999;
+        display: block;
+        font-size: .65em;
+        margin-top: 4em;
+        margin-right: -2.5em;
+        text-align: right;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}
+
+@import "css/mfa-media";

@@ -1,0 +1,176 @@
+.mfa-puzzle-wrapper {
+  background-color: white;
+  //border: 1px solid @gray3;
+  opacity: 0;
+  transition: opacity 1s linear;
+  position: relative;
+}
+
+#mfa-magic-field {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: transparent;
+  cursor: default;
+  display: block;
+  font-size: 16px;
+  height: 10px;
+  line-height: 1px;
+  margin: 0;
+  opacity: 0;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 10px;
+  z-index: -10000;
+  transform: scale(0);
+}
+
+// DEFAULT APP STYLES (not section specific)
+
+.mfa-btn, .mfa-btn:active, .mfa-btn:link, .mfa-btn:hover, .mfa-btn:visited {
+  background-color: #ffffff;
+  border: 1px solid @gray3;
+  border-radius: 4px;
+  box-sizing: content-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .75em;
+  line-height: 1em;
+  margin: 0;
+  outline: none;
+  padding: .5em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+  -webkit-appearance: none;
+
+  &:not(.mfa-dropdown):hover {
+    background-color: @gray5;
+    color: white;
+
+    .mfa-icon {
+      background-position: right center;
+    }
+  }
+
+  &.mfa-btn-lg {
+    font-size: 1em;
+  }
+
+  &.mfa-btn-dk {
+    background-color: @gray5;
+    color: white;
+
+    &:hover {
+      background-color: @gray4;
+    }
+
+    .mfa-icon {
+      background-position: right center;
+    }
+  }
+
+}
+
+.mfa-column {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+.mfa-word {
+  display: block;
+  margin: 0 auto 2em auto;
+  white-space: normal;
+}
+
+.mfa-square, .mfa-black, .mfa-demo-square {
+  background-color: #fff;
+  border: 1px solid #666666;
+  cursor: pointer;
+  display: inline-block;
+  height: 2em;
+  line-height: 0;
+  margin: -1px 0 0 -1px;
+  max-height: 2em;
+  max-width: 2em;
+  min-height: 2em;
+  min-width: 2em;
+  padding: 0 !important;
+  position: relative;
+  text-align: center;
+  width: 2em;
+}
+
+.mfa-square > .mfa-input, .mfa-demo-input {
+  border: none;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0 0 0.2em 0;
+  max-height: 1em;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 2em;
+}
+
+.mfa-square > .mfa-number, .mfa-demo-number {
+  display: block;
+  font-size: 0.55em;
+  line-height: 1em;
+  margin: 2px 0 0 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mfa-square > .mfa-ordinal, .mfa-demo-ordinal {
+  display: block;
+  font-size: 0.55em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 2px 2px 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.mfa-black {
+  background-color: #000000;
+  font-weight: bold;
+  color: #fff;
+}
+
+.mfa-clue {
+  line-height: 1.4em;
+  white-space: normal;
+}
+
+.mfa-clue > .mfa-ordinal {
+  display: inline-block;
+  margin-left: -1.5em;
+  position: relative;
+  text-align: left;
+  width: 1.625em;
+}
+
+.mfa-clue > .mfa-ordinal:after {
+  content: ".";
+}
+
+.mfa-grid-padding-hide {
+  cursor: default;
+  opacity: 0;
+}

@@ -1,4 +1,4 @@
-// mfAcrostic 1.0.1 © 2014-2021 David Murchie & Monday Fills. All rights reserved.
+// mfAcrostic 1.0.2 © 2014-2021 David Murchie & Monday Fills. All rights reserved.
 
 $.fn.mfAcrostic = function(options) {
 
@@ -101,7 +101,7 @@ const acrosticTemplate = `
             <div id="mfa-main">
 
                 <div id="mfa-author" class="mfa-section-outer">
-                    <h5>Source of the quotation:</h5>
+                    <h5>Quote author and title of work:</h5>
                     <div class="mfa-section-wrapper">
                         <div class="mfa-section"></div>
                     </div>
@@ -360,13 +360,13 @@ const acrosticTemplate = `
                                             mfAcrostic Help
                                         </h3>
                                         <p>
-                                            <span class="mfa-icon mfa-icon-drop-cap"></span> The object of an Acrostic is to reveal a quote and its source by solving a series of indexed word clues and transferring their solutions to an indexed quote grid. Acrostics are presented in three pieces: the quote source; the quote itself; and the clues/word list.
+                                            <span class="mfa-icon mfa-icon-drop-cap"></span> The object of an Acrostic is to reveal a quote, its author, and the title of its source by solving a series of indexed word clues and transferring their solutions to an indexed quote grid. Acrostics are presented in three pieces: the quote author and title of work; the quote itself; and the clues/word list.
                                         </p>
                                         <p>
                                             Start by looking for easy-to-solve word clues at the bottom. Also search the quote for one-letter words (which are almost always A or I). Periodically scan the quote for short words that you can you can complete once you have a few letters, and continue working back and forth between the grid and the clues until complete.
                                         </p>
                                         <p>
-                                            When you’re done, the grid will spell out a quote, and the first letters of the clue answers at the bottom will form the "acrostic" at the top which spells out the quote's source.
+                                            When you’re done, the grid will spell out a quote, and the first letters of the clue answers at the bottom will form the "acrostic" at the top which spells out the quote's author and the title of the source.
                                         </p>
                                         <p>
                                             Black squares in the grid indicate the end of a word, and punctuation is omitted in the grid (apostrophes, commas, periods, etc.).
@@ -449,6 +449,7 @@ const badBrowserTemplate = `
     let showGridPad = options.showGridPad || 'grid';
     let colorScheme = options.colorScheme;
     let disableStorage = options.disableStorage;
+    let disableAutoFocus = options.disableAutoFocus || false;
 
     // Check browser... dump out if no ES6 support
     if (!browserCheck()) {
@@ -1019,7 +1020,9 @@ const badBrowserTemplate = `
         checkForErrors(thisAcrosticEl.find('.mfa-grid'), 1);
 
         let firstSolverSquare = thisAcrosticEl.find('#mfa-grid .mfa-square:first');
-        changeActive(firstSolverSquare);
+        if (!disableAutoFocus) {
+            changeActive(firstSolverSquare);
+        }
         if (justLoaded) {
             thisMagicField.data('errorsShown','0');
             thisMagicField.data('successShown','0');
@@ -1184,7 +1187,7 @@ const badBrowserTemplate = `
             }
             else if (arg === 'word') {
                 if ( thisAcrosticEl.find('.mfa-focused.mfa-author').length ) {
-                    answerTypeText = "the entire quote source";
+                    answerTypeText = "the entire quote author and title";
                 } else if ( thisAcrosticEl.find('.mfa-focused.mfa-grid').length ) {
                     answerTypeText = "this word in the quote grid";
                 }

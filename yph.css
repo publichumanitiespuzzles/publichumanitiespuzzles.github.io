@@ -1,0 +1,14 @@
+@media screen and (min-width: 800px) {
+  #page_container {
+    max-width: 80em;
+    padding: 0;
+    margin-left: 0;
+  }
+}
+
+
+#page_container {
+    margin-right: 400;
+    margin-left: 0;
+}
+

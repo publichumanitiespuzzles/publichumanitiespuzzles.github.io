@@ -42,7 +42,7 @@ for line in fi_template:
     elif line.strip() == "INSERT_WIDTH":
         fo.write("  exolve-width: " + str(p.width) + "\n")
     elif line.strip() == "INSERT_HEIGHT":
-        fo.write("  exolve-height: " + str(p.width) + "\n")
+        fo.write("  exolve-height: " + str(p.height) + "\n")
     elif "SOLUTIONPDFNAME" in line:
         fo.write(line.replace("SOLUTIONPDFNAME", solution_pdf).replace("PUZZLEPDFNAME", puzzle_pdf))
     else:

@@ -7,7 +7,7 @@ html_file = sys.argv[1].replace("puz", "html")
 puzzle_pdf = sys.argv[2]
 solution_pdf = sys.argv[3]
 
-p = puz.read("Feb2021_TopSchools.puz")
+p = puz.read(puz_file)
 
 numbering = p.clue_numbering()
 

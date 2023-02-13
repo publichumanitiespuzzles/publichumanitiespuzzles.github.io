@@ -34,7 +34,7 @@ exolve-begin
   exolve-id: side-streets
   exolve-title: Side Streets
   exolve-setter:   Matthew Stock  
-  exolve-copyright:
+  exolve-copyright: This puzzle has a meta answer, which is a building on Yale's campus. After solving the puzzle, see if you can identify which building it is. 
   exolve-width: 15
   exolve-height: 15
   exolve-grid:
@@ -608,7 +608,7 @@ Exolve.prototype.init = function() {
   }
   if (this.copyright) {
     document.getElementById(this.prefix + '-copyright').innerHTML =
-          'Ⓒ ' + this.copyright
+          this.copyright
   } else {
     this.copyright = ''
   }
